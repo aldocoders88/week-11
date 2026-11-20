@@ -1,11 +1,1429 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Latihan List dan Tabel</title>
-  </head>
-  <body>
-     <h1>Catatan Ganjil dan Fenomena Menarik Seni Rupa</h1>
-	 <p>Kompilasi fenomena material, metode manipulasi visual, serta praktik seniman lintas zaman.</p>
-		
-  </body>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FINGERLAB.ID — Katalog Resmi Sarung Jempol Gaming</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-carbon: #0b0b0d;
+      --bg-graphite: #131317;
+      --bg-card: #17171c;
+      --bg-studio: #1e1e25;
+      --border-subtle: #272730;
+      --border-strong: #363642;
+      --ink-primary: #f4f4f6;
+      --ink-secondary: #a1a1aa;
+      --ink-muted: #71717a;
+      --accent-crimson: #e6192e;
+      --accent-crimson-dark: #3a0b12;
+      --accent-emerald: #22c55e;
+      --accent-emerald-bg: #072915;
+      --accent-gold: #f59e0b;
+      --radius-sm: 4px;
+      --radius-md: 6px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-carbon);
+      color: var(--ink-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background-color: var(--accent-crimson);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 7px 0;
+      text-align: center;
+    }
+
+    /* Header */
+    .site-header {
+      background-color: var(--bg-graphite);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 18px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      background-color: var(--accent-crimson);
+      color: #ffffff;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      color: var(--ink-primary);
+      text-transform: uppercase;
+    }
+
+    .brand-title span {
+      color: var(--accent-crimson);
+    }
+
+    .brand-sub {
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.8rem;
+      color: var(--ink-secondary);
+      font-weight: 600;
+    }
+
+    .official-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-primary);
+    }
+
+    .official-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-emerald);
+      border-radius: 50%;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background-color: var(--bg-graphite);
+      background-image: repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.015) 0px,
+        rgba(255, 255, 255, 0.015) 1px,
+        transparent 1px,
+        transparent 8px
+      );
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 48px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-crimson);
+      margin-bottom: 12px;
+    }
+
+    .hero-heading {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      color: var(--ink-primary);
+      margin-bottom: 16px;
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--ink-secondary);
+      max-width: 520px;
+      margin-bottom: 26px;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .highlight-item strong {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--ink-primary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .highlight-item span {
+      font-size: 0.76rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-showcase {
+      background-color: var(--bg-studio);
+      border: 1px solid var(--border-strong);
+      border-top: 3px solid var(--accent-crimson);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-showcase-imgs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background-color: var(--border-subtle);
+      height: 220px;
+    }
+
+    .hero-showcase-imgs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .showcase-caption {
+      padding: 12px 16px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--ink-secondary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: var(--bg-card);
+    }
+
+    /* Main Catalog */
+    .main-section {
+      padding: 48px 24px;
+    }
+
+    .catalog-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink-primary);
+      text-transform: uppercase;
+    }
+
+    .section-desc {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      margin-top: 3px;
+    }
+
+    .catalog-meta {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--ink-secondary);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-thumb {
+      background-color: var(--bg-studio);
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .product-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      background-color: rgba(11, 11, 13, 0.88);
+      border: 1px solid var(--border-strong);
+      color: var(--ink-primary);
+    }
+
+    .badge-promo {
+      background-color: var(--accent-crimson);
+      border-color: var(--accent-crimson);
+      color: #ffffff;
+    }
+
+    .sku-label {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 2;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #e4e4e7;
+      background-color: rgba(11, 11, 13, 0.82);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .product-info {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-series {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-crimson);
+      margin-bottom: 4px;
+    }
+
+    .product-title {
+      font-size: 1.04rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .product-summary {
+      font-size: 0.82rem;
+      color: var(--ink-secondary);
+      margin-bottom: 14px;
+      line-height: 1.45;
+    }
+
+    .spec-list {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 10px;
+      margin-bottom: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 12px;
+      font-size: 0.75rem;
+    }
+
+    .spec-item {
+      color: var(--ink-muted);
+    }
+
+    .spec-item strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .product-pricing {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-strike-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .price-old {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      text-decoration: line-through;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .discount-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #fca5a5;
+      background-color: var(--accent-crimson-dark);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    .price-now {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #ffffff;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
+
+    .sales-meta {
+      text-align: right;
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+    }
+
+    .sales-rating {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      font-weight: 700;
+      color: var(--ink-primary);
+      margin-bottom: 2px;
+    }
+
+    .star-icon {
+      color: var(--accent-gold);
+    }
+
+    /* Comparison Table */
+    .spec-table-section {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-top: 3px solid var(--accent-crimson);
+      border-radius: var(--radius-md);
+      padding: 28px;
+    }
+
+    .spec-table-header {
+      margin-bottom: 20px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    th {
+      background-color: var(--bg-studio);
+      font-weight: 700;
+      color: var(--ink-primary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    td {
+      color: var(--ink-secondary);
+    }
+
+    td strong {
+      color: var(--ink-primary);
+    }
+
+    .status-ready {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      background-color: var(--accent-emerald-bg);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--bg-graphite);
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 0 28px;
+      margin-top: 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-primary);
+      margin-bottom: 12px;
+    }
+
+    .footer-col p,
+    .footer-col li {
+      font-size: 0.84rem;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      list-style: none;
+    }
+
+    .payment-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pay-chip {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--ink-primary);
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-strong);
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero-heading {
+        font-size: 2rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    KATALOG RESMI FINGERLAB INDONESIA &bull; PENGIRIMAN SETIAP HARI DARI JAKARTA PUSAT &bull; GARANSI RESMI 30 HARI
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">FL</div>
+        <div>
+          <h1 class="brand-title">FINGERLAB<span>.ID</span></h1>
+          <p class="brand-sub">Esports Mobile Touch Peripherals</p>
+        </div>
+      </div>
+
+      <div class="header-meta">
+        <span>V4 Flagship &bull; V2 Edition &bull; Silver Fiber &bull; Pro Pack</span>
+        <div class="official-badge">
+          <span class="official-dot"></span>
+          Official Store Catalog
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-kicker">Katalog Produk 2025 &mdash; Competitive Gear</span>
+        <h2 class="hero-heading">Presisi Maksimal.<br>Zero Sweat. Siap Turnamen.</h2>
+        <p class="hero-text">
+          Sarung jempol gaming berstandar turnamen dengan rajutan serat konduktif 18-jarum. Mengurangi gesekan layar, mencegah ghost touch, dan menjaga akurasi bidikan tetap konsisten.
+        </p>
+        <div class="hero-highlights">
+          <div class="highlight-item">
+            <strong>0.26 mm</strong>
+            <span>Ketebalan Ultra-Tipis</span>
+          </div>
+          <div class="highlight-item">
+            <strong>24-Needle</strong>
+            <span>Kerapatan Rajutan</span>
+          </div>
+          <div class="highlight-item">
+            <strong>30 Hari</strong>
+            <span>Garansi Jahitan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-showcase">
+        <div class="hero-showcase-imgs">
+          <img src="Sarung Jmepol Website/sarjem v4 galaxy.jpg" alt="Sarung Jempol Unggulan 1" onerror="handleImgFallback(this, 'sarjem v4 galaxy.jpg')">
+          <img src="Sarung Jmepol Website/sarjem v4 emas.jpg" alt="Sarung Jempol Unggulan 2" onerror="handleImgFallback(this, 'sarjem v4 emas.jpg')">
+        </div>
+        <span class="showcase-caption">Koleksi Unggulan &mdash; Seri V4 Flagship &amp; Turnamen</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog -->
+  <main class="container main-section">
+    <div class="catalog-toolbar">
+      <div>
+        <h2 class="section-title">Katalog Produk</h2>
+        <p class="section-desc">Daftar lengkap 32 varian sarung jempol gaming beserta spesifikasi teknis dan harga resmi.</p>
+      </div>
+      <div class="catalog-meta" id="catalog-count">Menampilkan 32 Produk</div>
+    </div>
+
+    <section class="product-grid" id="product-grid" aria-label="Daftar Produk Sarung Jempol"></section>
+
+    <!-- Material Comparison Table -->
+    <section class="spec-table-section" aria-label="Panduan Perbandingan Material">
+      <div class="spec-table-header">
+        <h2 class="section-title">Panduan Pemilihan Material</h2>
+        <p class="section-desc">Perbandingan teknis antar seri untuk menyesuaikan gaya bermain Anda.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Seri Material</th>
+              <th>Ketebalan</th>
+              <th>Tingkat Gesekan</th>
+              <th>Daya Serap Keringat</th>
+              <th>Rekomendasi Game</th>
+              <th>Status Stok</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Carbon Fiber (Pro)</strong></td>
+              <td>0.28 mm</td>
+              <td>Sangat Licin (Fast Glide)</td>
+              <td>Tinggi</td>
+              <td>FPS (PUBG, CODM, Valorant Mobile)</td>
+              <td><span class="status-ready">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td><strong>100% Silver Fiber</strong></td>
+              <td>0.30 mm</td>
+              <td>Seimbang (Balanced Control)</td>
+              <td>Sangat Tinggi</td>
+              <td>MOBA (Mobile Legends, Wild Rift)</td>
+              <td><span class="status-ready">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td><strong>Ice Silk Breathable</strong></td>
+              <td>0.35 mm</td>
+              <td>Halus &amp; Sejuk</td>
+              <td>Maksimal (Anti-Lembap)</td>
+              <td>Sesi Bermain Panjang / Kasual</td>
+              <td><span class="status-ready">Tersedia</span></td>
+            </tr>
+            <tr>
+              <td><strong>Titanium Micro-Grip</strong></td>
+              <td>0.32 mm</td>
+              <td>Kontrol Presisi (Micro-Aim)</td>
+              <td>Tinggi</td>
+              <td>Sniper / Gyro &amp; Claw Grip</td>
+              <td><span class="status-ready">Tersedia</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>FINGERLAB.ID</h4>
+          <p>
+            Distributor dan produsen aksesoris sentuh mobile gaming di Indonesia. Seluruh produk melalui tahap pengecekan kerapatan rajut sebelum dikemas.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Alamat Gudang</h4>
+          <p>
+            Ruko Niaga Cempaka Mas Blok D-14<br>
+            Kemayoran, Jakarta Pusat 10640<br>
+            Indonesia
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Jam Operasional</h4>
+          <ul>
+            <li>Senin &ndash; Jumat: 09.00 &ndash; 18.00 WIB</li>
+            <li>Sabtu: 09.00 &ndash; 15.00 WIB</li>
+            <li>Minggu &amp; Hari Libur: Tutup</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Dukungan Pembayaran &amp; Kurir</h4>
+          <div class="payment-badges">
+            <span class="pay-chip">QRIS</span>
+            <span class="pay-chip">BCA</span>
+            <span class="pay-chip">MANDIRI</span>
+            <span class="pay-chip">JNE</span>
+            <span class="pay-chip">J&amp;T</span>
+            <span class="pay-chip">SICEPAT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> PT Fingerlab Aksesoris Indonesia. Seluruh hak cipta dilindungi.</span>
+        <span>Halaman Katalog Statis (Display Only)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function handleImgFallback(imgEl, fileName) {
+      const candidates = [
+        `Sarung jempol/${fileName}`,
+        fileName,
+        `Sarung Jmepol Website/Sarung Jmepol Website/${fileName}`
+      ];
+      const step = Number(imgEl.dataset.fallbackStep || 0);
+      if (step < candidates.length) {
+        imgEl.dataset.fallbackStep = step + 1;
+        imgEl.src = candidates[step];
+      } else {
+        imgEl.onerror = null;
+      }
+    }
+
+    const catalogData = [
+      // === BAGIAN ATAS: SERI V4 FLAGSHIP (8 GAMBAR: #1 - #8) ===
+      {
+        img: "Sarung Jmepol Website/sarjem v4 galaxy.jpg",
+        sku: "FL-001",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Galaxy Nebula",
+        summary: "Seri flagship V4 motif galaxy dengan rajutan ultra-tipis 0.26 mm dan sensitivitas sentuh maksimal.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Tin Box",
+        price: "Rp 43.000",
+        oldPrice: "Rp 55.000",
+        discount: "-22%",
+        rating: "5.0",
+        sold: "2,4rb terjual",
+        badge: "Terlaris V4",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 hitam.jpg",
+        sku: "FL-002",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Stealth Black",
+        summary: "Desain V4 serba hitam dengan teknologi anti-gulung pada pangkal jari dan akurasi micro-aim tinggi.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 39.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "1,9rb terjual",
+        badge: "Flagship V4",
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 emas.jpg",
+        sku: "FL-003",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Championship Gold",
+        summary: "Edisi turnamen V4 aksen emas dengan konduktivitas penuh 360 derajat untuk gaya grip claw maupun thumb.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 41.000",
+        oldPrice: "Rp 50.000",
+        discount: "-18%",
+        rating: "5.0",
+        sold: "1,5rb terjual",
+        badge: "Pro Grade",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 merah.jpg",
+        sku: "FL-004",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Crimson Flare",
+        summary: "Varian merah menyala generasi V4 untuk pergerakan flick cepat dan respons layar 144Hz tanpa delay.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 39.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "1,1rb terjual",
+        badge: "144Hz Ready",
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 biru.jpg",
+        sku: "FL-005",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Cyber Blue",
+        summary: "Rajutan V4 warna biru elektrik dengan serat anti-keringat untuk sesi push rank kompetitif.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 39.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "920 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 hijau.jpg",
+        sku: "FL-006",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Venom Green",
+        summary: "Edisi hijau neon V4 dengan kelenturan manset presisi yang nyaman dipakai berjam-jam.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 39.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "780 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 oren.jpg",
+        sku: "FL-007",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Blazing Orange",
+        summary: "Seri V4 warna oranye dengan daya tahan gesekan tinggi pada tempered glass maupun layar matte.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 39.000",
+        oldPrice: "Rp 48.000",
+        discount: "-19%",
+        rating: "4.9",
+        sold: "850 terjual",
+        badge: "Promo",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 pink.jpg",
+        sku: "FL-008",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Neon Rose",
+        summary: "Kombinasi warna pink cerah dengan tekstur rajutan mulus tanpa jahitan sambungan di ujung jari.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 39.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "960 terjual",
+        badge: "Rilis Baru",
+        isPromo: false
+      },
+
+      // === BAGIAN TENGAH: SERI V2 EDITION (6 GAMBAR: #9 - #14) ===
+      {
+        img: "Sarung Jmepol Website/sarjem v2 emas.jpg",
+        sku: "FL-009",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Royal Gold",
+        summary: "Generasi V2 edisi emas dengan manset pengunci elastis agar tidak mudah bergeser saat bermain intens.",
+        material: "Silver Copper V2",
+        thickness: "0.29 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 34.000",
+        oldPrice: "Rp 42.000",
+        discount: "-19%",
+        rating: "4.9",
+        sold: "1,3rb terjual",
+        badge: "Edisi V2",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v2 biru.jpg",
+        sku: "FL-010",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Cobalt Blue",
+        summary: "Peningkatan kerapatan rajut V2 warna biru kobalt yang meminimalkan gesekan di segala kondisi.",
+        material: "Silver Nylon V2",
+        thickness: "0.29 mm",
+        pack: "2 Pcs",
+        price: "Rp 31.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "740 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v2 merah.jpg",
+        sku: "FL-011",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Scarlet Red",
+        summary: "Varian merah V2 dengan keseimbangan kecepatan glide dan kontrol recoil untuk game FPS dan MOBA.",
+        material: "Silver Nylon V2",
+        thickness: "0.29 mm",
+        pack: "2 Pcs",
+        price: "Rp 31.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "690 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v2 hijau.jpg",
+        sku: "FL-012",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Emerald Green",
+        summary: "Struktur rajut berpori V2 warna hijau yang menjaga sirkulasi udara tetap sejuk di ujung jari.",
+        material: "Silver Nylon V2",
+        thickness: "0.29 mm",
+        pack: "2 Pcs",
+        price: "Rp 31.000",
+        oldPrice: "Rp 38.000",
+        discount: "-18%",
+        rating: "4.7",
+        sold: "580 terjual",
+        badge: "Hemat",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v2 ungu.jpg",
+        sku: "FL-013",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Violet Storm",
+        summary: "Varian ungu V2 dengan daya tahan rajutan tinggi dan dapat dicuci ulang tanpa mengurangi konduktivitas.",
+        material: "Silver Nylon V2",
+        thickness: "0.29 mm",
+        pack: "2 Pcs",
+        price: "Rp 31.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "610 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v2 pink.jpg",
+        sku: "FL-014",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Sakura Pink",
+        summary: "Kombinasi warna pink pastel V2 dengan serat konduktif halus yang lembut dan nyaman di kulit.",
+        material: "Silver Nylon V2",
+        thickness: "0.29 mm",
+        pack: "2 Pcs",
+        price: "Rp 31.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "820 terjual",
+        badge: "Favorit",
+        isPromo: false
+      },
+
+      // === BAGIAN BAWAH: SERI SILVER FIBER (8 GAMBAR: #15 - #22) ===
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber hitam.jpg",
+        sku: "FL-015",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Obsidian Black",
+        summary: "Varian hitam klasik dengan rajutan 100% serat perak konduktif 24-jarum untuk kontrol presisi.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs + Pouch",
+        price: "Rp 28.000",
+        oldPrice: "Rp 35.000",
+        discount: "-20%",
+        rating: "4.9",
+        sold: "2,1rb terjual",
+        badge: "Best Seller",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber biru.jpg",
+        sku: "FL-016",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Electric Blue",
+        summary: "Rajutan serat perak warna biru elektrik, anti-keringat dan responsif di seluruh permukaan layar.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs + Pouch",
+        price: "Rp 28.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "940 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber merah.jpg",
+        sku: "FL-017",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Crimson Red",
+        summary: "Edisi merah crimson dengan konduktivitas tinggi untuk pergerakan cepat tanpa ghost touch.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs + Pouch",
+        price: "Rp 28.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "870 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber hijau.jpg",
+        sku: "FL-018",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Neon Green",
+        summary: "Desain ergonomis dengan serat perak elastis warna hijau neon yang pas di berbagai ukuran jari.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs",
+        price: "Rp 26.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "630 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber kuning.jpg",
+        sku: "FL-019",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Solar Yellow",
+        summary: "Varian kuning cerah dengan daya serap keringat tinggi untuk kenyamanan bermain jangka panjang.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs",
+        price: "Rp 26.000",
+        oldPrice: "Rp 32.000",
+        discount: "-19%",
+        rating: "4.8",
+        sold: "550 terjual",
+        badge: "Promo",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber oren.jpg",
+        sku: "FL-020",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Sunset Orange",
+        summary: "Serat perak konduktif warna oranye dengan tenunan rapat yang menahan minyak dari ujung jari.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs",
+        price: "Rp 26.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.7",
+        sold: "490 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber ungu.jpg",
+        sku: "FL-021",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Phantom Purple",
+        summary: "Warna ungu elegan dengan jahitan tepi halus yang tidak meninggalkan bekas tekanan di jari.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs",
+        price: "Rp 26.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "520 terjual",
+        badge: null,
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem silver fiber pink.jpg",
+        sku: "FL-022",
+        series: "Seri Silver Fiber",
+        name: "Silver Fiber Pro — Rose Pink",
+        summary: "Varian pink serat perak ringan dengan kelenturan tinggi untuk penggunaan harian maupun kasual.",
+        material: "Pure Silver Fiber",
+        thickness: "0.30 mm",
+        pack: "2 Pcs",
+        price: "Rp 26.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "710 terjual",
+        badge: null,
+        isPromo: false
+      },
+
+      // === REPETITIF SESUAI URUTAN DARI SERI V4 FLAGSHIP KE SERI V2 EDITION (#23 - #32) ===
+      {
+        img: "Sarung Jmepol Website/sarjem v4 galaxy.jpg",
+        sku: "FL-023",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Galaxy Nebula (4-Finger Set)",
+        summary: "Paket 4 jari (jempol dan telunjuk) seri V4 Galaxy Nebula untuk kontrol claw grip profesional.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "4 Pcs + Pouch",
+        price: "Rp 75.000",
+        oldPrice: "Rp 95.000",
+        discount: "-21%",
+        rating: "5.0",
+        sold: "640 terjual",
+        badge: "4-Finger Set",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 hitam.jpg",
+        sku: "FL-024",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Stealth Black (4-Finger Set)",
+        summary: "Set lengkap 4 jari warna Stealth Black V4 untuk akurasi tombol tembak dan scope tanpa selip.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "4 Pcs + Pouch",
+        price: "Rp 72.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "530 terjual",
+        badge: "4-Finger Set",
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 emas.jpg",
+        sku: "FL-025",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Championship Gold (Tin Box)",
+        summary: "Edisi kolektor V4 Gold dilengkapi kotak penyimpanan logam eksklusif anti-penyok.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Tin Box",
+        price: "Rp 48.000",
+        oldPrice: null,
+        discount: null,
+        rating: "5.0",
+        sold: "470 terjual",
+        badge: "Collector Box",
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 merah.jpg",
+        sku: "FL-026",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Crimson Flare (Duo Pack)",
+        summary: "Paket hemat 2 pasang (4 pcs) V4 Crimson Flare untuk cadangan latihan maupun turnamen.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "4 Pcs + Box",
+        price: "Rp 69.000",
+        oldPrice: "Rp 85.000",
+        discount: "-19%",
+        rating: "4.9",
+        sold: "420 terjual",
+        badge: "Duo Pack",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 biru.jpg",
+        sku: "FL-027",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Cyber Blue (6-Finger Tablet)",
+        summary: "Paket 6 jari seri V4 Cyber Blue khusus pemain iPad dan tablet layar lebar kompetitif.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "6 Pcs + Pouch",
+        price: "Rp 99.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "310 terjual",
+        badge: "Tablet Pro",
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 hijau.jpg",
+        sku: "FL-028",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Venom Green (Duo Pack)",
+        summary: "Paket 2 pasang V4 Venom Green dengan serat elastis yang tahan tarikan dan tidak mudah melar.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "4 Pcs + Box",
+        price: "Rp 69.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.8",
+        sold: "360 terjual",
+        badge: "Duo Pack",
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 oren.jpg",
+        sku: "FL-029",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Blazing Orange (XL Fit)",
+        summary: "Ukuran khusus jari lebih besar pada seri V4 Blazing Orange agar tetap nyaman tanpa menekan sirkulasi.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "2 Pcs + Box",
+        price: "Rp 42.000",
+        oldPrice: null,
+        discount: null,
+        rating: "4.9",
+        sold: "390 terjual",
+        badge: "XL Fit",
+        isPromo: false
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v4 pink.jpg",
+        sku: "FL-030",
+        series: "Seri V4 Flagship",
+        name: "FingerLab V4 — Neon Rose (Couple Pack)",
+        summary: "Paket berisi 2 pasang V4 Neon Rose lengkap dengan kotak penyimpanan praktis untuk dibawa bepergian.",
+        material: "Nano Silver V4",
+        thickness: "0.26 mm",
+        pack: "4 Pcs + Box",
+        price: "Rp 69.000",
+        oldPrice: "Rp 85.000",
+        discount: "-19%",
+        rating: "5.0",
+        sold: "480 terjual",
+        badge: "Paket Hemat",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v2 emas.jpg",
+        sku: "FL-031",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Royal Gold (Team Pack 6 Pcs)",
+        summary: "Paket tim berisi 3 pasang (6 pcs) seri V2 Royal Gold lengkap dengan kotak penyimpanan logam.",
+        material: "Silver Copper V2",
+        thickness: "0.29 mm",
+        pack: "6 Pcs + Tin Box",
+        price: "Rp 89.000",
+        oldPrice: "Rp 115.000",
+        discount: "-23%",
+        rating: "5.0",
+        sold: "590 terjual",
+        badge: "Team Pack",
+        isPromo: true
+      },
+      {
+        img: "Sarung Jmepol Website/sarjem v2 biru.jpg",
+        sku: "FL-032",
+        series: "Seri V2 Edition",
+        name: "FingerLab V2 — Cobalt Blue (Starter Bundle 10 Pcs)",
+        summary: "Paket stok lengkap 5 pasang (10 pcs) seri V2 Cobalt Blue untuk kebutuhan latihan harian tim esports.",
+        material: "Silver Nylon V2",
+        thickness: "0.29 mm",
+        pack: "10 Pcs + Case",
+        price: "Rp 135.000",
+        oldPrice: "Rp 175.000",
+        discount: "-23%",
+        rating: "5.0",
+        sold: "440 terjual",
+        badge: "Best Value",
+        isPromo: true
+      }
+    ];
+
+    function initCatalog() {
+      const grid = document.getElementById("product-grid");
+      const countEl = document.getElementById("catalog-count");
+      const yearEl = document.getElementById("year");
+
+      if (countEl) countEl.textContent = `Menampilkan ${catalogData.length} Produk`;
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+      if (!grid) return;
+
+      grid.innerHTML = catalogData.map((item) => {
+        const fileName = item.img.split("/").pop();
+        const badgeHTML = item.badge
+          ? `<span class="badge-tag ${item.isPromo ? "badge-promo" : ""}">${item.badge}</span>`
+          : "";
+
+        const oldPriceHTML = item.oldPrice
+          ? `<div class="price-strike-row">
+               <span class="price-old">${item.oldPrice}</span>
+               <span class="discount-pill">${item.discount}</span>
+             </div>`
+          : "";
+
+        return `
+          <article class="product-card">
+            <div class="product-thumb">
+              ${badgeHTML}
+              <img src="${item.img}" alt="${item.name}" onerror="handleImgFallback(this, '${fileName}')">
+              <span class="sku-label">${item.sku}</span>
+            </div>
+            <div class="product-info">
+              <span class="product-series">${item.series}</span>
+              <h3 class="product-title">${item.name}</h3>
+              <p class="product-summary">${item.summary}</p>
+              <div class="spec-list">
+                <div class="spec-item">Bahan: <strong>${item.material}</strong></div>
+                <div class="spec-item">Tebal: <strong>${item.thickness}</strong></div>
+                <div class="spec-item">Isi: <strong>${item.pack}</strong></div>
+                <div class="spec-item">Stok: <strong>Tersedia</strong></div>
+              </div>
+              <div class="product-pricing">
+                <div class="price-block">
+                  ${oldPriceHTML}
+                  <span class="price-now">${item.price}</span>
+                </div>
+                <div class="sales-meta">
+                  <div class="sales-rating">
+                    <span class="star-icon">&#9733;</span>
+                    <span>${item.rating}</span>
+                  </div>
+                  <span>${item.sold}</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    initCatalog();
+  </script>
+</body>
 </html>
